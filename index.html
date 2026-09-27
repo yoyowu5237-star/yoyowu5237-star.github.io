@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="吳庭佑 Johnny Wu｜Hospitality Professional 個人履歷網站">
+<title>吳庭佑 · Johnny Wu｜Hospitality Professional</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+:root{
+  --ink:#18211e;--muted:#6e7772;--cream:#f5f2eb;--paper:#fffdf8;
+  --gold:#a27b43;--gold2:#d2b27b;--line:#e6e0d5;--dark:#18211e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;background:var(--cream);color:var(--ink);line-height:1.8}
+a{text-decoration:none;color:inherit}.wrap{width:min(1120px,90%);margin:auto}
+header{position:fixed;z-index:20;top:0;left:0;right:0;background:rgba(245,242,235,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(230,224,213,.8)}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:800;letter-spacing:.03em}.brand span{color:var(--gold)}
+.nav{display:flex;gap:28px;list-style:none;font-size:14px}
+.nav a{transition:.2s}.nav a:hover{color:var(--gold)}
+.menu{display:none;border:0;background:none;font-size:26px}
+.hero{min-height:100vh;padding:125px 0 70px;display:flex;align-items:center;overflow:hidden;position:relative}
+.hero:before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-180px;top:80px;background:radial-gradient(circle,rgba(162,123,67,.20),transparent 67%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;width:100%}
+.kicker{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:800;display:flex;align-items:center;gap:12px}
+.kicker:before{content:"";width:38px;height:1px;background:var(--gold)}
+h1{font-family:"Playfair Display","Noto Sans TC",serif;font-size:clamp(48px,7vw,82px);line-height:1.08;letter-spacing:-.045em;margin:18px 0}
+.hero h1 span{color:var(--gold)}
+.subtitle{font-size:20px;color:var(--muted);max-width:580px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:12px 22px;border-radius:999px;border:1px solid var(--ink);font-size:14px;transition:.25s}
+.btn.primary{background:var(--ink);color:white}.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px #0001}
+.photo-frame{position:relative;width:min(410px,100%);margin:auto}
+.photo-frame:before{content:"";position:absolute;inset:-18px 18px 18px -18px;border:1px solid var(--gold2);border-radius:24px}
+.photo{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:24px;box-shadow:0 25px 70px #23352b24;background:#ddd}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%;filter:saturate(.9)}
+.badge{position:absolute;right:-20px;bottom:28px;background:var(--paper);border:1px solid var(--line);padding:15px 19px;border-radius:14px;box-shadow:0 14px 35px #0001;font-size:13px}
+section{padding:105px 0}.section-title{margin-bottom:42px}.section-title small{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}.section-title h2{font-size:42px;line-height:1.2;margin-top:8px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:70px}.lead{font-size:19px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}.fact{background:var(--paper);padding:22px}.fact small{display:block;color:var(--muted);font-size:12px}.fact strong{font-size:15px}
+.timeline{display:grid;gap:18px}.item{display:grid;grid-template-columns:180px 1fr;gap:30px;padding:30px;background:var(--paper);border:1px solid var(--line);border-radius:18px;transition:.25s}.item:hover{transform:translateY(-4px);box-shadow:0 15px 40px #0000000b}.item .year{color:var(--gold);font-size:13px;font-weight:800}.item h3{font-size:21px}.item p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:28px;min-height:190px;transition:.25s}.card:hover{transform:translateY(-5px);box-shadow:0 18px 45px #0000000c}.num{font-family:"Playfair Display",serif;color:var(--gold);font-size:26px}.card h3{margin:8px 0 10px}.card p{color:var(--muted);font-size:14px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.tag{border:1px solid var(--line);padding:5px 10px;border-radius:999px;font-size:12px;color:var(--muted)}
+.portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{position:relative;min-height:250px;padding:28px;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#26332f,#111715);color:white;display:flex;flex-direction:column;justify-content:flex-end}.project:before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;right:-60px;top:-60px;border:1px solid #ffffff30}.project h3{font-size:22px}.project p{color:#d4d8d5;font-size:14px;margin-top:5px}.project .project-label{font-size:11px;letter-spacing:.16em;color:#d2b27b;margin-bottom:8px}
+.certs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.cert{background:#eee7da;padding:17px;border-radius:14px;text-align:center;font-weight:700;font-size:14px}
+.contact-box{background:var(--dark);color:white;border-radius:30px;padding:55px}.contact-box .kicker{color:#d2b27b}.contact-box h2{font-size:44px;line-height:1.25;margin:10px 0}.contact-box p{color:#c8ceca;margin-bottom:25px}.contact-links{display:flex;flex-wrap:wrap;gap:10px}.contact-links a{border:1px solid #53605a;padding:10px 15px;border-radius:999px;font-size:13px;transition:.2s}.contact-links a:hover{background:white;color:var(--ink)}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:30px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+.top{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:white;display:grid;place-items:center;z-index:10}
+@media(max-width:800px){
+ .nav{position:absolute;display:none;top:72px;left:0;right:0;background:#f5f2eb;border-bottom:1px solid var(--line);flex-direction:column;gap:0}
+ .nav.open{display:flex}.nav li{width:100%;border-top:1px solid var(--line)}.nav a{display:block;padding:14px 5%}.menu{display:block}
+ .hero-grid,.about{grid-template-columns:1fr;gap:45px}.hero{padding-top:115px}.photo-frame{width:min(350px,90%)}
+ .cards,.portfolio{grid-template-columns:1fr 1fr}.item{grid-template-columns:1fr;gap:8px}.certs{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){.cards,.portfolio{grid-template-columns:1fr}.facts{grid-template-columns:1fr}.contact-box{padding:35px 25px}.contact-box h2{font-size:34px}}
+</style>
+</head>
+<body id="top">
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">吳庭佑 <span>· Johnny Wu</span></a>
+      <button class="menu" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="選單">☰</button>
+      <ul class="nav">
+        <li><a href="#about">關於我</a></li><li><a href="#experience">學經歷</a></li>
+        <li><a href="#skills">技能</a></li><li><a href="#portfolio">作品集</a></li><li><a href="#contact">聯絡</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="wrap hero-grid">
+  <div class="reveal">
+   <div class="kicker">Hospitality Professional</div>
+   <h1>您好，我是<br><span>吳庭佑</span></h1>
+   <p class="subtitle">以熱忱與細節，為每位客人創造賓至如歸的體驗。</p>
+   <div class="buttons"><a class="btn primary" href="#contact">與我聯繫　→</a><a class="btn" href="#portfolio">查看作品集</a></div>
+  </div>
+  <div class="photo-frame reveal">
+   <div class="photo"><img src="profile.jpg" alt="吳庭佑個人照片"></div>
+   <div class="badge">Hospitality<br><strong>Service with Heart</strong></div>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+<div class="wrap">
+ <div class="section-title reveal"><small>About Me</small><h2>關於我</h2></div>
+ <div class="about">
+  <p class="lead reveal">我目前在澎湖科技大學學習餐旅相關課程，累積約 <strong>3 年</strong> 的餐旅學經歷。透過課堂理論、實作訓練與打工經驗，了解餐飲服務、顧客溝通與團隊合作的重要性。<br><br>我喜歡與人互動，也重視服務細節。未來希望持續精進專業技能，以親切、負責且有效率的態度，為客人提供優質的餐旅服務體驗。</p>
+  <div class="facts reveal">
+   <div class="fact"><small>姓名</small><strong>吳庭佑</strong></div><div class="fact"><small>現居</small><strong>澎湖</strong></div>
+   <div class="fact"><small>生日</small><strong>2008 / 01</strong></div><div class="fact"><small>Email</small><strong>yoyowu5237@gmail.com</strong></div>
+  </div>
+ </div>
+</div>
+</section>
+
+<section id="experience">
+<div class="wrap">
+ <div class="section-title reveal"><small>Experience</small><h2>學經歷</h2></div>
+ <div class="timeline">
+  <article class="item reveal"><div class="year">學籍期間</div><div><h3>澎湖科技大學</h3><p>餐旅相關課程，持續累積專業基礎與實務能力。</p></div></article>
+  <article class="item reveal"><div class="year">打工經驗 · 3 年</div><div><h3>家樂福、7-11、麥當勞</h3><p>累積顧客服務、貨架補貨、收銀、點餐、出餐與結帳經驗，並學會團隊合作與應對突發狀況。</p></div></article>
+ </div>
+</div>
+</section>
+
+<section id="skills">
+<div class="wrap">
+ <div class="section-title reveal"><small>Skills & Certificates</small><h2>技能與專業</h2></div>
+ <div class="cards">
+  <article class="card reveal"><div class="num">01</div><h3>專業服務</h3><p>以顧客體驗為核心，重視接待與服務細節。</p><div class="tags"><span class="tag">禮賓接待</span><span class="tag">餐飲服務</span><span class="tag">客訴處理</span><span class="tag">宴會規劃</span></div></article>
+  <article class="card reveal"><div class="num">02</div><h3>語言能力</h3><p>具備基礎多語溝通能力，持續提升實際應用。</p><div class="tags"><span class="tag">中文</span><span class="tag">英文</span><span class="tag">日文</span></div></article>
+  <article class="card reveal"><div class="num">03</div><h3>工作特質</h3><p>注重團隊合作、責任感、溝通與臨場應變。</p><div class="tags"><span class="tag">團隊合作</span><span class="tag">溝通</span><span class="tag">應變</span></div></article>
+ </div>
+ <div class="certs" style="margin-top:20px">
+  <div class="cert reveal">中餐丙級</div><div class="cert reveal">西餐丙級</div><div class="cert reveal">烘焙丙級</div><div class="cert reveal">飲調丙級</div>
+ </div>
+</div>
+</section>
+
+<section id="portfolio">
+<div class="wrap">
+ <div class="section-title reveal"><small>Portfolio</small><h2>作品集</h2></div>
+ <div class="portfolio">
+  <article class="project reveal"><div class="project-label">HOSPITALITY</div><h3>餐飲服務實務</h3><p>課程與實作中累積的餐飲服務經驗。</p></article>
+  <article class="project reveal"><div class="project-label">CULINARY</div><h3>餐飲專業技能</h3><p>結合中餐、西餐、烘焙與飲調專業。</p></article>
+  <article class="project reveal"><div class="project-label">CUSTOMER SERVICE</div><h3>顧客服務經驗</h3><p>從不同工作場域培養溝通與臨場應變能力。</p></article>
+ </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+ <div class="contact-box reveal">
+  <div class="kicker">Contact</div><h2>期待與您交流。</h2>
+  <p>歡迎透過以下方式與我聯繫，期待有機會與您認識。</p>
+  <div class="contact-links">
+   <a href="mailto:yoyowu5237@gmail.com">✉ yoyowu5237@gmail.com</a>
+   <a href="tel:+88696615607">☎ 0966-156-07</a>
+   <a href="https://reurl.cc/7YYqE1" target="_blank" rel="noopener">↗ 社群連結</a>
+  </div>
+ </div>
+</div>
+</section>
+</main>
+<a class="top" href="#top">↑</a>
+<footer>© 2026 吳庭佑 · 以真心，待客如歸</footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav').classList.remove('open')));
+</script>
+</body>
+</html>
